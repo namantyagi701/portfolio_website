@@ -100,23 +100,17 @@ export default function FeaturedProjects() {
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
-                  {project.liveUrl && project.liveUrl !== '[ADD: live demo link]' ? (
+                  {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-neutral-900 hover:bg-[#d90f1e] text-neutral-300 hover:text-white border border-neutral-800 transition-colors"
+                      className="p-2 bg-neutral-900 hover:bg-[#d90f1e] text-neutral-300 hover:text-white border border-neutral-800 transition-colors focus-visible:ring-1 focus-visible:ring-red-500"
+                      aria-label={`Open live demo of ${project.title}`}
                       title="Open Live App"
                     >
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
-                  ) : (
-                    <span
-                      className="text-[10px] font-mono px-2 py-1 bg-neutral-900 border border-neutral-800 text-neutral-500"
-                      title="Live link in progress"
-                    >
-                      [IN DEV]
-                    </span>
                   )}
 
                   {project.githubUrl && (

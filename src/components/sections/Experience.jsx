@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award, CheckCircle2 } from 'lucide-react';
 import SectionTab from '../common/SectionTab';
 import { experienceEducation } from '../../data/content';
 

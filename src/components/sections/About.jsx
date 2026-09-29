@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, FileText, ArrowRight } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import Button from '../common/Button';
 import SectionTab from '../common/SectionTab';
-import { personalInfo } from '../../data/content';
+import { personalInfo, DSA_COUNT } from '../../data/content';
 
 export default function About() {
   const lineVariants = {
@@ -87,12 +87,12 @@ export default function About() {
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-[#d90f1e]" />
-                500+ ALGORITHMIC PROBLEMS
+                {DSA_COUNT}+ ALGORITHMIC PROBLEMS
               </span>
-              {/* <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-[#d90f1e]" />
-                SIH WINNER (DEPT. 120+ TEAMS)
-              </span> */}
+                SIH WINNER (DEPT. ROUND)
+              </span>
             </div>
           </div>
 

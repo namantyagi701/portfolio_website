@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Code2, Play, Sparkles, Terminal } from 'lucide-react';
+import { Code2, Play } from 'lucide-react';
 import Button from '../common/Button';
 import SectionTab from '../common/SectionTab';
 import { personalInfo, heroCredibility } from '../../data/content';

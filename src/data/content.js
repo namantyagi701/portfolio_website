@@ -1,17 +1,24 @@
 // Content source: Naman Tyagi's verified resume
 // Single source of truth for portfolio data
 
+// Deployed portfolio URL - used for canonical, Open Graph, sitemap, and robots.txt
+// [TODO: Replace with your custom production domain if different]
+export const DEPLOYED_URL = "https://portfolio-namantyagi701.vercel.app";
+
+// Single source of truth for DSA problems solved
+export const DSA_COUNT = 500;
+
 export const personalInfo = {
   name: "NAMAN TYAGI",
   title: "FULL-STACK & AI SYSTEMS DEVELOPER",
   headline: "ARCHITECTING ROBUST WEB APPS & CODE INTELLIGENCE",
   shortRole: "SOFTWARE DEVELOPER",
-  bio: "Computer Science undergraduate specializing in high-performance full-stack web applications, AST-driven code intelligence pipelines, and scalable backend infrastructure. Experienced in PostgreSQL vector search (pgvector), asynchronous queues (BullMQ/Redis), and algorithmic problem solving with 500+ DSA problems cleared.",
+  bio: `Computer Science undergraduate specializing in high-performance full-stack web applications, AST-driven code intelligence pipelines, and scalable backend infrastructure. Experienced in PostgreSQL vector search (pgvector), asynchronous queues (BullMQ/Redis), and algorithmic problem solving with ${DSA_COUNT}+ DSA problems cleared.`,
   location: "GHAZIABAD / DELHI NCR, INDIA",
   availability: "AVAILABLE FOR ROLES & FREELANCE",
   estYear: "EST. 2024",
   email: "namantyagi.30.xa@gmail.com",
-  phone: "+91 7017074045",
+  phone: "+91 7017074045", // Set to null if contact preference is email only
   github: "https://github.com/namantyagi701",
   linkedin: "https://www.linkedin.com/in/naman-tyagi-503215329/",
   leetcode: "https://leetcode.com/u/namantyagi98665/",
@@ -19,7 +26,7 @@ export const personalInfo = {
 };
 
 export const heroCredibility = {
-  metric: "500+",
+  metric: `${DSA_COUNT}+`,
   label: "DSA PROBLEMS SOLVED",
   subtext: "LEETCODE MAX RATING 1654 • GEEKSFORGEEKS",
   badgeText: "SMART INDIA HACKATHON WINNER (DEPT. ROUND)",
@@ -27,7 +34,7 @@ export const heroCredibility = {
 
 export const techSummaryCell = {
   title: "5+ CORE PROJECTS",
-  subtitle: "500+ PROBLEMS SOLVED",
+  subtitle: `${DSA_COUNT}+ PROBLEMS SOLVED`,
   description: "Production web applications, AST code intelligence, and algorithmic system design.",
 };
 
@@ -74,7 +81,7 @@ export const projects = [
       "Async job pipeline with BullMQ & Redis decoupling webhook ingestion from heavy embeddings computation",
       "GitHub OAuth 2.0 self-serve repository onboarding and real-time webhook status tracker",
     ],
-    liveUrl: "[ADD: live demo link]",
+    liveUrl: null, // [TODO: Add GitRAG live demo URL when deployment is ready]
     githubUrl: "https://github.com/namantyagi701/gitRag",
     tag: "AI CODE INTELLIGENCE",
     accentColor: "#d90f1e",
@@ -105,7 +112,7 @@ export const projects = [
       "OTP-based account verification and secure password recovery mechanisms to protect applicant accounts",
     ],
     liveUrl: "https://scholarship-disbursement-system.vercel.app/",
-    githubUrl: "https://github.com/namantyagi701",
+    githubUrl: null, // [TODO: Add repository URL if public; hidden while unset/private]
     tag: "GOVTECH & WORKFLOW",
     accentColor: "#d90f1e",
   },
@@ -136,7 +143,7 @@ export const projects = [
       "Admin assessment dashboard with automated scoring and session playback",
     ],
     liveUrl: "https://algo-arena-green.vercel.app/",
-    githubUrl: "https://github.com/namantyagi701",
+    githubUrl: null, // [TODO: Add repository URL if public; hidden while unset/private]
     tag: "COLLABORATIVE PLATFORM",
     accentColor: "#d90f1e",
   },
@@ -167,7 +174,7 @@ export const projects = [
       "Cloudinary-backed Admin Panel with image drag-and-drop and real-time inventory management",
     ],
     liveUrl: "https://ecommerce-app-lyart-alpha.vercel.app/",
-    githubUrl: "https://github.com/namantyagi701",
+    githubUrl: null, // [TODO: Add repository URL if public; hidden while unset/private]
     tag: "E-COMMERCE & CMS",
     accentColor: "#d90f1e",
   },
@@ -197,7 +204,7 @@ export const projects = [
       "Salted and encrypted password hashing with bcrypt and resilient session lifecycle management",
     ],
     liveUrl: "https://mern-authentication-ten-inky.vercel.app/",
-    githubUrl: "https://github.com/namantyagi701",
+    githubUrl: null, // [TODO: Add repository URL if public; hidden while unset/private]
     tag: "AUTH & SECURITY",
     accentColor: "#d90f1e",
   },
@@ -205,8 +212,8 @@ export const projects = [
 
 export const stats = [
   {
-    number: "500+",
-    rawNumber: 500,
+    number: `${DSA_COUNT}+`,
+    rawNumber: DSA_COUNT,
     suffix: "+",
     title: "DSA PROBLEMS SOLVED",
     description:
@@ -228,8 +235,8 @@ export const stats = [
     suffix: "+",
     title: "TEAMS OUTRANKED",
     description:
-      "Departmental Winner at Smart India Hackathon (SIH) 2024 for the PMSSS scholarship platform backend with RBAC, OCR verification, and Render deployment.",
-    indicator: "SIH DEPT. WINNER",
+      "Departmental Winner at Smart India Hackathon (SIH) 2024 (Dept. Round) for the PMSSS scholarship platform backend with RBAC, OCR verification, and Render deployment.",
+    indicator: "SIH (DEPT. ROUND)",
   },
   {
     number: "75.13%",
@@ -257,15 +264,15 @@ export const experienceEducation = [
   },
   {
     period: "SEPT 2024",
-    title: "BACKEND DEVELOPER — SMART INDIA HACKATHON WINNER",
-    organization: "Internal SIH (Departmental Winner out of 120+ Teams)",
+    title: "SMART INDIA HACKATHON (DEPT. ROUND) — DEPARTMENTAL WINNER",
+    organization: "Smart India Hackathon (SIH 2024) — Internal Selection Round",
     location: "Delhi NCR, India",
-    grade: "Departmental Winner",
-    type: "ACHIEVEMENT / HACKATHON",
+    grade: "Departmental Winner (out of 120+ teams)",
+    type: "ACHIEVEMENT",
     bullets: [
-      "Selected as core Backend Developer for the PMSSS Scholarship Disbursement System out of 120+ competing engineering teams.",
+      "Departmental round winner selected out of 120+ competing engineering teams as core Backend Developer for the PMSSS Scholarship Disbursement System.",
       "Implemented role-based access control (RBAC), secure JWT authentication middleware, and OCR-based student document verification.",
-      "Engineered automated workflows and successfully deployed production-ready microservices on Render.",
+      "Engineered automated workflows and successfully deployed application on Render.",
     ],
   },
   {
@@ -288,7 +295,7 @@ export const marqueeItems = [
   "FULL-STACK DEVELOPER",
   "AI SYSTEMS & PGVECTOR",
   "AST CODE INTELLIGENCE",
-  "500+ PROBLEMS SOLVED",
+  `${DSA_COUNT}+ PROBLEMS SOLVED`,
 ];
 
 export const footerLinks = [
@@ -306,5 +313,7 @@ export const socialLinks = [
   { name: "LINKEDIN", url: "https://www.linkedin.com/in/naman-tyagi-503215329/", icon: "Linkedin" },
   { name: "LEETCODE", url: "https://leetcode.com/u/namantyagi98665/", icon: "Code2" },
   { name: "EMAIL", url: "mailto:namantyagi.30.xa@gmail.com", icon: "Mail" },
-  { name: "PHONE", url: "tel:+917017074045", icon: "Phone" },
+  ...(personalInfo.phone
+    ? [{ name: "PHONE", url: `tel:${personalInfo.phone.replace(/\s+/g, '')}`, icon: "Phone" }]
+    : []),
 ];

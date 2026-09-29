@@ -114,20 +114,16 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 pt-4 border-t border-neutral-800">
-                {project.liveUrl && project.liveUrl !== '[ADD: live demo link]' ? (
+                {project.liveUrl && (
                   <Button
                     variant="primary"
                     icon={ExternalLink}
                     href={project.liveUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Launch Live App
                   </Button>
-                ) : (
-                  <div className="px-4 py-2.5 bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-400 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                    <span>Active Ingestion / Demo Link: [In Progress]</span>
-                  </div>
                 )}
 
                 {project.githubUrl && (
