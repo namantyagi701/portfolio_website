@@ -105,7 +105,7 @@ export default function About() {
             >
               MORE ABOUT ME
             </Button>
-            <span className="text-[10px] font-mono text-neutral-500 uppercase">
+            <span className="text-xs font-mono text-neutral-400 uppercase">
               DOWNLOAD VERIFIED CV [PDF]
             </span>
           </div>

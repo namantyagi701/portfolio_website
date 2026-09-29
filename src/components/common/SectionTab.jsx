@@ -24,7 +24,7 @@ export default function SectionTab({
       </div>
 
       {/* Segment Bar Cells */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 text-[10px] font-mono tracking-widest uppercase">
+      <div className="grid grid-cols-2 sm:grid-cols-4 text-xs font-mono tracking-widest uppercase">
         {/* Active Section Label */}
         <div className="relative flex items-center gap-2 px-4 py-2 border-r border-neutral-800 bg-[#121212] text-white">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d90f1e] animate-pulse" />
@@ -44,7 +44,7 @@ export default function SectionTab({
         ))}
 
         {/* Right Status Indicator */}
-        <div className="flex items-center justify-end px-4 py-2 text-neutral-400 bg-[#070707] font-mono text-[9px] ml-auto col-start-2 sm:col-start-4">
+        <div className="flex items-center justify-end px-4 py-2 text-neutral-400 bg-[#070707] font-mono text-xs ml-auto col-start-2 sm:col-start-4">
           <span className="tracking-wider">{rightIndicator}</span>
         </div>
       </div>

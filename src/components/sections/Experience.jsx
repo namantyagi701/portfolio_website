@@ -31,13 +31,13 @@ export default function Experience() {
           >
             {/* Column 1: Time Period & Badge */}
             <div className="md:col-span-3 space-y-2">
-              <span className="inline-block text-[10px] font-mono px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold uppercase">
+              <span className="inline-block text-xs font-mono px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold uppercase">
                 {item.type}
               </span>
               <div className="text-xs font-mono tracking-wider text-[#d90f1e] font-bold uppercase">
                 {item.period}
               </div>
-              <div className="text-xs font-mono text-neutral-500 uppercase">
+              <div className="text-xs font-mono text-neutral-400 uppercase">
                 {item.location}
               </div>
             </div>

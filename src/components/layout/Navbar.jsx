@@ -33,14 +33,14 @@ export default function Navbar() {
           >
             <span className="w-2.5 h-2.5 bg-[#d90f1e] group-hover:scale-110 transition-transform" />
             <span className="font-sans tracking-tight">{personalInfo.name}</span>
-            <span className="text-[10px] text-neutral-500 font-mono tracking-widest hidden sm:inline">
+            <span className="text-xs text-neutral-400 font-mono tracking-widest hidden sm:inline">
               ® DEV
             </span>
           </a>
 
           {/* Right Menu Trigger */}
           <div className="flex items-center gap-3">
-            <span className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-[10px] font-mono text-neutral-400">
+            <span className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-300">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               AVAILABLE
             </span>
@@ -77,7 +77,7 @@ export default function Navbar() {
             {/* Menu Links Grid */}
             <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 my-auto">
               <div className="md:col-span-8 space-y-3">
-                <p className="text-[11px] font-mono tracking-widest text-[#d90f1e] uppercase">
+                <p className="text-xs font-mono tracking-widest text-[#d90f1e] uppercase">
                   NAVIGATION INDEX // TIMELINE
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -89,12 +89,12 @@ export default function Navbar() {
                       className="group flex items-center justify-between p-4 bg-[#121212] border border-neutral-800 hover:border-[#d90f1e] hover:bg-neutral-900 transition-all text-sm font-sans uppercase font-bold tracking-tight text-neutral-200 hover:text-white"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-[10px] font-mono text-neutral-500 group-hover:text-[#d90f1e]">
+                        <span className="text-xs font-mono text-neutral-400 group-hover:text-[#d90f1e]">
                           0{idx + 1}
                         </span>
                         <span>{link.label.split(' // ')[0]}</span>
                       </div>
-                      <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-[#d90f1e] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-[#d90f1e] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
                   ))}
                 </div>
@@ -112,7 +112,7 @@ export default function Navbar() {
                   <p className="text-sm font-mono text-neutral-400 mt-1">
                     {personalInfo.phone}
                   </p>
-                  <p className="text-xs font-mono text-neutral-500 mt-2">
+                  <p className="text-xs font-mono text-neutral-400 mt-2">
                     {personalInfo.location}
                   </p>
                 </div>
@@ -137,6 +137,7 @@ export default function Navbar() {
                       rel="noopener noreferrer"
                       className="p-3 flex-1 bg-neutral-900 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-300 hover:text-white"
                       title="GitHub"
+                      aria-label="GitHub Profile"
                     >
                       <GithubIcon className="w-4 h-4" />
                     </a>
@@ -146,6 +147,7 @@ export default function Navbar() {
                       rel="noopener noreferrer"
                       className="p-3 flex-1 bg-neutral-900 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-300 hover:text-white"
                       title="LinkedIn"
+                      aria-label="LinkedIn Profile"
                     >
                       <LinkedinIcon className="w-4 h-4" />
                     </a>
@@ -155,6 +157,7 @@ export default function Navbar() {
                       rel="noopener noreferrer"
                       className="p-3 flex-1 bg-neutral-900 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-300 hover:text-white"
                       title="LeetCode"
+                      aria-label="LeetCode Profile"
                     >
                       <LeetCodeIcon className="w-4 h-4" />
                     </a>
@@ -164,7 +167,7 @@ export default function Navbar() {
             </div>
 
             {/* Bottom status bar */}
-            <div className="flex items-center justify-between text-[10px] font-mono text-neutral-500 border-t border-neutral-800/80 pt-4 max-w-5xl mx-auto w-full">
+            <div className="flex items-center justify-between text-xs font-mono text-neutral-400 border-t border-neutral-800/80 pt-4 max-w-5xl mx-auto w-full">
               <span>EST. 2024 // DELHI NCR</span>
               <span className="text-[#d90f1e]">NAMAN TYAGI // PORTFOLIO</span>
             </div>

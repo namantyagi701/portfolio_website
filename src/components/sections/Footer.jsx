@@ -33,12 +33,12 @@ export default function Footer() {
               className="group flex items-center justify-between px-6 sm:px-8 py-4 sm:py-5 hover:bg-neutral-900/70 transition-all font-sans text-sm sm:text-base font-bold uppercase tracking-tight text-neutral-300 hover:text-white"
             >
               <div className="flex items-center gap-4">
-                <span className="text-[10px] font-mono text-neutral-500 group-hover:text-[#d90f1e] transition-colors">
+                <span className="text-xs font-mono text-neutral-400 group-hover:text-[#d90f1e] transition-colors">
                   0{idx + 1}
                 </span>
                 <span>{link.label}</span>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-[#d90f1e] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+              <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-[#d90f1e] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
             </a>
           ))}
         </div>
@@ -55,11 +55,12 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={social.name}
                   className="flex flex-col items-center justify-center p-6 sm:p-8 hover:bg-neutral-900/80 text-neutral-400 hover:text-white transition-all group"
                   title={social.name}
                 >
                   <Icon className="w-5 h-5 group-hover:text-[#d90f1e] group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] font-mono mt-2 tracking-widest text-neutral-500 group-hover:text-white uppercase">
+                  <span className="text-xs font-mono mt-2 tracking-widest text-neutral-400 group-hover:text-white uppercase">
                     {social.name}
                   </span>
                 </a>
@@ -74,7 +75,7 @@ export default function Footer() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono">
               <div>
-                <span className="text-neutral-500 text-xs block">DIRECT INBOX</span>
+                <span className="text-neutral-400 text-xs block">DIRECT INBOX</span>
                 <a
                   href={`mailto:${personalInfo.email}`}
                   className="text-white hover:text-[#d90f1e] transition-colors break-all"
@@ -84,7 +85,7 @@ export default function Footer() {
               </div>
               {personalInfo.phone && (
                 <div>
-                  <span className="text-neutral-500 text-xs block">VOICE / TELEGRAM</span>
+                  <span className="text-neutral-400 text-xs block">VOICE / TELEGRAM</span>
                   <a
                     href={`tel:${personalInfo.phone}`}
                     className="text-white hover:text-[#d90f1e] transition-colors"
@@ -96,7 +97,7 @@ export default function Footer() {
             </div>
 
             <div className="pt-2 text-xs font-mono text-neutral-400">
-              <span className="text-neutral-500 block">BASE COORDINATES</span>
+              <span className="text-neutral-400 block">BASE COORDINATES</span>
               <span>{personalInfo.location}</span>
             </div>
           </div>
@@ -128,7 +129,7 @@ export default function Footer() {
       </div>
 
       {/* Very Bottom Metadata Bar */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-4 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-4 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-neutral-400 uppercase tracking-widest">
         <div>©{CURRENT_YEAR} {personalInfo.name} • ALL RIGHTS RESERVED</div>
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d90f1e]" />

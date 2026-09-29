@@ -79,7 +79,7 @@ export default function Stats() {
               {/* Description & platform badge */}
               <div className="md:col-span-7 space-y-2">
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-[#d90f1e] font-semibold uppercase">
+                  <span className="text-xs font-mono px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-[#d90f1e] font-semibold uppercase">
                     {stat.indicator}
                   </span>
                   <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-white font-sans">

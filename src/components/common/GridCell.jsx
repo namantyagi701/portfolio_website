@@ -29,9 +29,9 @@ export default function GridCell({
       } ${className}`}
     >
       {(label || subLabel) && (
-        <div className="absolute top-2 right-2 text-[9px] font-mono tracking-widest text-neutral-500 uppercase flex items-center gap-2 pointer-events-none z-10">
+        <div className="absolute top-2 right-2 text-xs font-mono tracking-widest text-neutral-400 uppercase flex items-center gap-2 pointer-events-none z-10">
           {label && <span>{label}</span>}
-          {subLabel && <span className="text-neutral-600">[{subLabel}]</span>}
+          {subLabel && <span className="text-neutral-400">[{subLabel}]</span>}
         </div>
       )}
       {children}

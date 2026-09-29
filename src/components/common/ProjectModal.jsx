@@ -1,27 +1,87 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, CheckCircle2, Terminal } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import Button from './Button';
 
 export default function ProjectModal({ project, isOpen, onClose }) {
+  const modalRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const lastActiveElement = useRef(null);
+
   useEffect(() => {
     if (isOpen) {
+      lastActiveElement.current = document.activeElement;
       document.body.style.overflow = 'hidden';
+
+      // Auto focus close button after mounting
+      const timer = setTimeout(() => {
+        if (closeButtonRef.current) {
+          closeButtonRef.current.focus();
+        }
+      }, 50);
+      return () => clearTimeout(timer);
     } else {
       document.body.style.overflow = 'unset';
+      if (lastActiveElement.current && typeof lastActiveElement.current.focus === 'function') {
+        lastActiveElement.current.focus();
+      }
     }
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
+  // Handle ESC key and focus trap
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        if (!modalRef.current) return;
+        const focusable = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+
+        const firstElement = focusable[0];
+        const lastElement = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!project) return null;
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10"
+        >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -29,10 +89,12 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             exit={{ opacity: 0 }}
             onClick={onClose}
             className="absolute inset-0 bg-black/85 backdrop-blur-md"
+            aria-hidden="true"
           />
 
           {/* Modal Container */}
           <motion.div
+            ref={modalRef}
             initial={{ opacity: 0, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 20 }}
@@ -46,14 +108,15 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 <span className="font-mono text-xs uppercase tracking-widest text-neutral-300">
                   {project.tag} // {project.year}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 bg-neutral-800 text-neutral-400">
+                <span className="text-xs font-mono px-2 py-0.5 bg-neutral-800 text-neutral-300">
                   {project.status}
                 </span>
               </div>
               <button
+                ref={closeButtonRef}
                 onClick={onClose}
-                className="p-1 text-neutral-400 hover:text-white transition-colors cursor-pointer border border-transparent hover:border-neutral-700"
-                aria-label="Close dialog"
+                className="p-1 text-neutral-400 hover:text-white transition-colors cursor-pointer border border-transparent hover:border-neutral-700 focus-visible:ring-2 focus-visible:ring-[#d90f1e]"
+                aria-label="Close project modal"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -65,7 +128,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 <p className="text-xs font-mono tracking-widest text-[#d90f1e] uppercase mb-1">
                   {project.category}
                 </p>
-                <h3 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
+                <h3 id="project-modal-title" className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
                   {project.title}
                 </h3>
               </div>

@@ -44,7 +44,7 @@ export default function Hero() {
         >
           <div className="w-0 h-0 border-y-[5px] border-y-transparent border-l-[8px] border-l-[#d90f1e]" />
           <span>{personalInfo.shortRole}</span>
-          <span className="text-neutral-500">// DELHI NCR</span>
+          <span className="text-neutral-400">// DELHI NCR</span>
         </motion.div>
 
         {/* Huge Bold Headline with Clean Negative Letter Spacing */}
@@ -70,7 +70,7 @@ export default function Hero() {
             className="md:col-span-4"
           >
             <div className="p-4 bg-[#111111] border border-neutral-800 relative group hover:border-neutral-700 transition-colors">
-              <div className="flex items-center justify-between text-[11px] font-mono uppercase text-neutral-400 mb-2">
+              <div className="flex items-center justify-between text-xs font-mono uppercase text-neutral-400 mb-2">
                 <span className="flex items-center gap-1.5 text-white font-bold">
                   <Code2 className="w-3.5 h-3.5 text-[#d90f1e]" />
                   LEETCODE & GFG
@@ -80,10 +80,10 @@ export default function Hero() {
               <div className="text-3xl font-black font-sans text-white tracking-tight">
                 {heroCredibility.metric}
               </div>
-              <p className="text-[10px] font-mono tracking-wider uppercase text-neutral-400 mt-1">
+              <p className="text-xs font-mono tracking-wider uppercase text-neutral-400 mt-1">
                 {heroCredibility.label}
               </p>
-              <div className="mt-3 pt-2 border-t border-neutral-800/80 flex items-center gap-1.5 text-[9px] font-mono text-emerald-400">
+              <div className="mt-3 pt-2 border-t border-neutral-800/80 flex items-center gap-1.5 text-xs font-mono text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 <span>{heroCredibility.badgeText}</span>
               </div>
@@ -116,23 +116,23 @@ export default function Hero() {
         </div>
 
         {/* Small Metadata Row at the bottom of hero */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-5 mt-10 border-t border-neutral-800/80 text-[11px] font-mono uppercase tracking-wider text-neutral-400">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-5 mt-10 border-t border-neutral-800/80 text-xs font-mono uppercase tracking-wider text-neutral-400">
           <div className="flex items-center gap-2">
-            <span className="text-neutral-600">[</span>
+            <span className="text-neutral-400">[</span>
             <span className="text-neutral-300">{personalInfo.location}</span>
-            <span className="text-neutral-600">]</span>
+            <span className="text-neutral-400">]</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-neutral-600">[</span>
+            <span className="text-neutral-400">[</span>
             <span className="text-neutral-300">{personalInfo.availability}</span>
-            <span className="text-neutral-600">]</span>
+            <span className="text-neutral-400">]</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-neutral-600">[</span>
+            <span className="text-neutral-400">[</span>
             <span className="text-neutral-300">{personalInfo.estYear}</span>
-            <span className="text-neutral-600">]</span>
+            <span className="text-neutral-400">]</span>
           </div>
 
           <div className="flex items-center justify-end gap-2 text-white">

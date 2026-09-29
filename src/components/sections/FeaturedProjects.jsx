@@ -39,8 +39,17 @@ export default function FeaturedProjects() {
           >
             {/* Project Card Media Frame */}
             <div
+              role="button"
+              tabIndex={0}
               onClick={() => setSelectedProject(project)}
-              className="relative w-full overflow-hidden cursor-pointer bg-[#0e0e11]"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProject(project);
+                }
+              }}
+              aria-label={`View details for project ${project.title}`}
+              className="relative w-full overflow-hidden cursor-pointer bg-[#0e0e11] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d90f1e]"
             >
               {/* Scale on hover */}
               <div className="transition-transform duration-500 ease-out group-hover:scale-[1.03]">
@@ -59,7 +68,7 @@ export default function FeaturedProjects() {
             {/* Project Details Footer */}
             <div className="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-6 bg-[#0a0a0a]">
               <div>
-                <div className="flex items-center justify-between text-xs font-mono text-neutral-500 mb-2">
+                <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-2">
                   <span>©{project.year}</span>
                   <span className="text-[#d90f1e]">{project.tag}</span>
                 </div>
@@ -86,13 +95,13 @@ export default function FeaturedProjects() {
                   {project.stack.slice(0, 4).map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-[10px] font-mono text-neutral-400 uppercase"
+                      className="px-2 py-0.5 bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-300 uppercase"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.stack.length > 4 && (
-                    <span className="px-1.5 py-0.5 text-[10px] font-mono text-neutral-500">
+                    <span className="px-1.5 py-0.5 text-xs font-mono text-neutral-400">
                       +{project.stack.length - 4} MORE
                     </span>
                   )}
@@ -119,6 +128,7 @@ export default function FeaturedProjects() {
                       rel="noopener noreferrer"
                       className="p-2 bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-800 transition-colors"
                       title="View GitHub Repository"
+                      aria-label={`View GitHub repository for ${project.title}`}
                     >
                       <GithubIcon className="w-4 h-4" />
                     </a>

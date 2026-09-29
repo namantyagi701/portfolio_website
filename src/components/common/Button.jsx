@@ -23,7 +23,7 @@ export default function Button({
     ghost:
       'bg-transparent text-neutral-400 hover:text-white border border-transparent hover:border-neutral-800',
     pill:
-      'bg-[#d90f1e] text-white px-4 py-2 text-[11px] font-bold tracking-widest hover:bg-[#b50b17] shadow-lg',
+      'bg-[#d90f1e] text-white px-4 py-2 text-xs font-bold tracking-widest hover:bg-[#b50b17] shadow-lg',
   };
 
   const combinedClasses = `${baseStyles} ${variants[variant] || variants.primary} ${className}`;
