@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LayoutGrid, X, ArrowUpRight, FileText, Mail } from 'lucide-react';
+import { LayoutGrid, X, ArrowUpRight, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, LeetCodeIcon } from '../common/Icons';
 import { personalInfo, footerLinks } from '../../data/content';
 

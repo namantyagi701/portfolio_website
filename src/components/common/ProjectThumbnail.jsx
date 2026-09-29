@@ -4,20 +4,14 @@ import {
   Code2,
   Video,
   ShoppingCart,
-  Terminal,
   Shield,
   Zap,
-  Search,
-  CheckCircle2,
   GraduationCap,
   KeyRound,
   Mail,
-  Lock,
-  Layers,
-  ArrowRight,
 } from 'lucide-react';
 
-export default function ProjectThumbnail({ id, title }) {
+export default function ProjectThumbnail({ id }) {
   // 1. GitRAG
   if (id === 'gitrag') {
     return (

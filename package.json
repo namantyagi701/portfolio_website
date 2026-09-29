@@ -1,7 +1,12 @@
 {
-  "name": "portfolio",
+  "name": "naman-tyagi-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Personal developer portfolio of Naman Tyagi — Full-Stack & AI Systems Developer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/namantyagi701/portfolio_website.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

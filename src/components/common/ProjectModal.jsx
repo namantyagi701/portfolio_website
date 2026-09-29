@@ -132,6 +132,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                     icon={GithubIcon}
                     href={project.githubUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     View Source Code
                   </Button>

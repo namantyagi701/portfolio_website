@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Plus, ArrowUpRight } from 'lucide-react';
+import { Plus, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from '../common/Icons';
 import ProjectThumbnail from '../common/ProjectThumbnail';
 import ProjectModal from '../common/ProjectModal';

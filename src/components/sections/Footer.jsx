@@ -11,6 +11,8 @@ const socialIconMap = {
   Phone: Phone,
 };
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-b from-[#1f0306] via-[#120204] to-[#0a0a0a] text-white overflow-hidden border-t border-red-900/40">
@@ -80,15 +82,17 @@ export default function Footer() {
                   {personalInfo.email}
                 </a>
               </div>
-              <div>
-                <span className="text-neutral-500 text-xs block">VOICE / TELEGRAM</span>
-                <a
-                  href={`tel:${personalInfo.phone}`}
-                  className="text-white hover:text-[#d90f1e] transition-colors"
-                >
-                  {personalInfo.phone}
-                </a>
-              </div>
+              {personalInfo.phone && (
+                <div>
+                  <span className="text-neutral-500 text-xs block">VOICE / TELEGRAM</span>
+                  <a
+                    href={`tel:${personalInfo.phone}`}
+                    className="text-white hover:text-[#d90f1e] transition-colors"
+                  >
+                    {personalInfo.phone}
+                  </a>
+                </div>
+              )}
             </div>
 
             <div className="pt-2 text-xs font-mono text-neutral-400">
@@ -125,7 +129,7 @@ export default function Footer() {
 
       {/* Very Bottom Metadata Bar */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-4 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
-        <div>©{new Date().getFullYear()} {personalInfo.name} • ALL RIGHTS RESERVED</div>
+        <div>©{CURRENT_YEAR} {personalInfo.name} • ALL RIGHTS RESERVED</div>
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-[#d90f1e]" />
           <span>REACT + VITE + TAILWIND + LENIS</span>

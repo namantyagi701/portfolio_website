@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, Code2, Trophy, GraduationCap, CheckCircle } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import AnimatedCounter from '../common/AnimatedCounter';
 import SectionTab from '../common/SectionTab';
 import { stats } from '../../data/content';
